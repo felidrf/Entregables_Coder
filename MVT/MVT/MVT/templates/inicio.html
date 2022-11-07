@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primer MVT</title>
+</head>
+
+<body>
+    <H1>
+        Primer entrega de MVT - Modelo Vista Template
+    </H1>
+    
+    <p> Este es el template, la vista con el modelo familia </p>
+    <p>
+        El modelo tiene {{nombre}} {{edad}} {{fecha_recibimiento}}
+    </p>
+     <p>
+        Los familiares son: 
+        <ul>
+            {% for familiar in nombre %}
+                <li> {{familiar}} </li>
+            {% endfor %}
+        </ul>
+
+    </p>
+
+    <p>
+        Sus edades son: 
+        <ul>
+            
+            {% for i in edad %}
+                <li> {{i}} </li>
+            {% endfor %}
+            
+        </ul>
+
+    </p>
+
+    <p>
+        Sus fechas de recibimiento son: 
+        <ul>
+            
+            {% for i in fecha_recibimiento%}
+                <li> {{i}} </li>
+            {% endfor %}
+            
+        </ul>
+
+    </p>
+
+</body>
+
+</html>
