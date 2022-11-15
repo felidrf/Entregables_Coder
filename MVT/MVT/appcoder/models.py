@@ -9,4 +9,14 @@ class familiar(models.Model):
     edad = models.BigIntegerField()
     fecha = models.DateField()
     
+class deporte(models.Model):
+
+    nombre = models.CharField(max_length=50)
+    cantidad_jugadores = models.IntegerField()
+
+class equipo(models.Model):
+
+    nombre = models.CharField(max_length=50)
+    cantidad_mundiales = models.IntegerField()
+
 

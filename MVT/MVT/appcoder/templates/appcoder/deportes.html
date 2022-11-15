@@ -1,0 +1,18 @@
+<!-- traigo el template de inicio con funcion extends esto es herencia-->
+{% extends 'appcoder/inicio.html' %}
+
+{% block container %}
+<h1> Este es el template del modelo deportes </h1>
+<p>
+    Insertamos la {{respuesta}} o los {{deportes}}
+</p>
+<p>
+    siempre que se hayan cargado a la base de datos
+</p>
+<ul>
+    {% for i in respuesta%}
+    <li> {{i}} </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

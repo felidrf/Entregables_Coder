@@ -1,3 +1,6 @@
+<!-- traigo el template de inicio con funcion extends esto es herencia-->
+{% extends 'appcoder/inicio.html' %}
+
 <html lang="en">
 
 <head>
@@ -8,15 +11,16 @@
 </head>
 
 <body>
+    
+    {% block contenido %}
     <H1>
-        Primer entrega de MVT - Modelo Vista Template
+        Entrega intermedia de MVT - Modelo Vista Template
     </H1>
 
-    
     <p> Este es el template, la vista con el modelo familia </p>
     
     <p>
-        El objeto del modelo familia tiene {{familiares}}
+        El objeto del modelo familia tiene {{familia}}
     </p>
 
     <p>
@@ -29,6 +33,7 @@
         {% endfor %}
     </ul>
     
+    {% endblock %}
 
 </body>
 
