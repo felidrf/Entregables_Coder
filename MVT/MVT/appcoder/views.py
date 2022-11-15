@@ -30,7 +30,7 @@ def familiares(request):
     # AL FALLAR LOGICA ANTERIOR EN respuesta PRUEBO OTRAS LOGICAS
     respuesta = []
     for i in familia:
-        respuesta.append(i.nombre + ", " + str(i.edad) + " anios, " + "su fecha de graduacion fue " + str(i.fecha))
+        respuesta.append(i.nombre + ", " + str(i.edad) + " anios, " + "su primer competicion olimpica fue " + str(i.fecha))
 
     return render(request, 'appcoder/familiares.html', {'familiares':familia, 'respuesta':respuesta})  # render(request, 'appcoder/familia.html')
 
@@ -38,9 +38,9 @@ def familiares(request):
 def equipos(request):
     equipos = equipo.objects.all()
 
-    respuesta = ""
+    respuesta = []
     for e in equipos:
-        respuesta += e.nombre + " ha jugado " + e.cantidad_mundiales + " de mundiales."
+        respuesta.append(e.nombre + ", ha ganado " + str(e.cantidad_medallas) + " de medallas olimpicas.")
     
     return render(request, 'appcoder/equipos.html', {'equipo': respuesta})
 
@@ -48,11 +48,11 @@ def equipos(request):
 def deportes(request):
     deportes = deporte.objects.all()
 
-    respuesta = ""
+    respuesta = []
     for d in deportes:
-        respuesta += d.nombre + " se juega de a " + d.cantidad_jugadores + " jugadores."
+        respuesta.append(d.nombre + ", se juega de a " + str(d.cantidad_jugadores) + " jugadores.")
     
-    return render(request, 'appcoder/deportes.html', {'deporte':respuesta})
+    return render(request, 'appcoder/deportes.html', {'deporte':respuesta, 'deportes':deportes})
 
 
 

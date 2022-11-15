@@ -1,18 +1,24 @@
 <!-- traigo el template de inicio con funcion extends esto es herencia-->
 {% extends 'appcoder/inicio.html' %}
 
-{% block container %}
-<h1> Este es el template del modelo equipos </h1>
+{% block contenido %}
+<h1> Entrega intermedia de MVT - Modelo Equipos </h1>
 <p>
-    Insertamos la {{respuesta}} o los {{equipos}}
-</p>
-<p>
-    siempre que se hayan cargado a la base de datos
+    Los equipos ingresados en la base de datos: 
 </p>
 <ul>
-    {% for i in respuesta%}
-    <li> {{i}} </li>
+    {% for i in equipos %}
+    <li> {{i.nombre}} </li>
     {% endfor %}
 </ul>
 
+<p>
+    Sus descripciones:
+
+    <ul>
+        {% for i in equipo %}
+            <li>{{i}}</li>
+        {% endfor %}
+    </ul>
+</p>
 {% endblock %}

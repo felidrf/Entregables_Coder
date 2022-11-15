@@ -17,6 +17,6 @@ class deporte(models.Model):
 class equipo(models.Model):
 
     nombre = models.CharField(max_length=50)
-    cantidad_mundiales = models.IntegerField()
+    cantidad_medallas = models.IntegerField()
 
 
