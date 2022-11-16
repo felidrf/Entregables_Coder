@@ -1,0 +1,36 @@
+<!-- traigo el template de inicio con funcion extends esto es herencia-->
+{% extends 'appcoder/inicio.html' %}
+
+{% block contenido %}
+<p>
+    La informacion que tenemos en la base de datos para "{{nombre}}" es la siguiente:
+</p>
+
+{% if equipos %}
+
+<ul>
+    {%for n in equipos %}
+    <li>{{n.nombre}} con {{n.cantidad_medallas}} medallas olimpicas</li>
+    {% endfor %}
+</ul>
+
+
+{%elif deportes %}
+
+<ul>
+    {%for n in deportes %}
+    <li>{{n.nombre}} deporte que se juega con {{n.cantidad_jugadores}} jugadores</li>
+    {% endfor %}
+</ul>
+
+{%elif familiares %}
+
+<ul>
+    {%for n in familiares %}
+    <li>{{n.nombre}}, el pariente que participo en el anio {{n.fecha.year}} en los JJOO y hoy tiene {{n.edad}} anios de edad</li>
+    {% endfor %}
+</ul>
+
+{% endif %}
+
+{% endblock %}

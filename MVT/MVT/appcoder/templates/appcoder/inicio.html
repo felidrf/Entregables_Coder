@@ -59,9 +59,10 @@
                 <a class="btn btn-primary" href="{% url 'formsfamilia' %}">Cargar Familiares</a>
                 <a class="btn btn-primary" href="{% url 'formsdeportes' %}">Cargar Deportes</a>
                 <a class="btn btn-primary" href="{% url 'formsequipos' %}">Cargar Equipos</a>
-                <a class="btn btn-primary" href="#signup">Buscar informacion en BD</a>
+                
             </div>
         </nav>
+
         <!-- Masthead-->
         <header class="masthead">
             <div class="container position-relative">
@@ -70,7 +71,18 @@
                         <div class="text-center text-white">
                             <!-- Page heading-->
                             <h1 class="mb-5">Entrega web intermedia !</h1>
-                            <h2>Django - OLIMPICO - Coderhouse</h2>
+                            <h2>Busca en Django - OLIMPICO - Coder</h2>
+                            
+                            <h3 class="mb-5">
+                                <form action="{% url 'buscar' %}" method="GET">
+                                    <p>
+                                        Nombre:
+                                        <input type="text" name="nombre" id="nombre">
+                                        <input class="btn btn-primary" type="submit" value="Buscar">
+                                    
+                                    </p>
+                                </form>
+                            </h3>
                         </div>
                     </div>
                 </div>

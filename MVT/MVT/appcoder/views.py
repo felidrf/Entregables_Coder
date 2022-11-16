@@ -85,3 +85,17 @@ def equiposFormulario(request):
     else:
         formulario=EquiposFormulario()
     return render(request, 'appcoder/formsequipos.html', {'formulario':formulario})
+
+
+def buscar(request):
+    if request.GET["nombre"]:
+        nombre=request.GET["nombre"]
+        equipos=equipo.objects.filter(nombre__icontains=nombre)
+        deportes=deporte.objects.filter(nombre__icontains=nombre)
+        familiares=familiar.objects.filter(nombre__icontains=nombre)
+
+        return render(request, "appcoder/resultado.html", {"nombre": nombre ,"equipos":equipos, "deportes":deportes, "familiares":familiares})
+    else:
+        respuesta ="No se encontraron  datos"
+    
+    return HttpResponse(respuesta)

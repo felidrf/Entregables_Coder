@@ -1,0 +1,15 @@
+<!-- traigo el template de inicio con funcion extends esto es herencia-->
+{% extends 'appcoder/inicio.html' %}
+
+{% block contenido %}
+
+<form action="{% url 'buscar' %}" method="GET">
+    <p>
+        Nombre:
+        <input type="text" name="nombre" id="nombre">
+        <input type="submit" value="Buscar">
+    
+    </p>
+</form>
+
+{% endblock %}
