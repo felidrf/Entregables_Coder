@@ -51,7 +51,7 @@ def equipos(request):
 def familiaFormulario(request):
     if request.method == 'POST':
         formulario = FamiliaFormulario(request.POST) #aqui llega la info del html
-        if formulario.is_valid:
+        if formulario.is_valid():
             informacion = formulario.cleaned_data
             familia = familiar(nombre=informacion['nombre'], edad=informacion['edad'], fecha=informacion['fecha'])
             familia.save()
@@ -63,7 +63,7 @@ def familiaFormulario(request):
 
 def deportesFormulario(request):
     formulario = DeportesFormulario(request.POST)
-    if request.method == "POST" and formulario.is_valid:
+    if request.method == "POST" and formulario.is_valid():
         #info = formulario.cleaned_data
         nombre=formulario.cleaned_data['nombre']
         jugadores=formulario.cleaned_data['jugadores']
@@ -77,7 +77,7 @@ def deportesFormulario(request):
 
 def equiposFormulario(request):
     formulario = EquiposFormulario(request.POST)
-    if request.method == "POST" and formulario.is_valid:
+    if request.method == "POST" and formulario.is_valid():
         info = formulario.cleaned_data
         equipos = equipo(nombre=info['nombre'], cantidad_medallas=info['medallas'])
         equipos.save()
