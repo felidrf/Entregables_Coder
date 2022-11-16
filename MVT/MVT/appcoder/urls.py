@@ -7,6 +7,7 @@ urlpatterns = [
     path("deportes/", deportes, name="deportes"),
     path("equipos/", equipos, name="equipos"),
     
-    #path("cursos/", cursos),
-    #path("entregables/", entregables),
+    path("formsfamilia/", familiaFormulario, name='formsfamilia'),
+    path("formsdeportes/", deportesFormulario, name='formsdeportes'),
+    path("formsequipos/", equiposFormulario, name='formsequipos'),
 ]

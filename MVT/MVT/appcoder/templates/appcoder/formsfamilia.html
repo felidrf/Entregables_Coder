@@ -1,0 +1,15 @@
+{% if formulario.errors %}
+
+<p style="color: red"> Revisar los datos por favor </p>
+
+{% endif %}
+
+<form action="" method="POST">{% csrf_token %}
+
+    <table>
+        {{formulario.as_table}}
+    </table>
+
+    <input type="submit" value="Cargar">
+
+</form>
